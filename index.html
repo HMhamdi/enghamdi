@@ -1,0 +1,296 @@
+```html
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سيرة ذاتية - Eng Hamdi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@700&display=swap');
+        
+        :root {
+            --primary-color: #007AFF;
+            --secondary-color: #a0522d;
+            --secondary-color-hover: #8b4513;
+            --background-image: url('https://c4.wallpaperflare.com/wallpaper/274/323/713/code-php-html-ilya-pavlov-wallpaper-preview.jpg');
+            --container-bg-color: rgba(211, 211, 211, 0.8);
+            --text-color: #333;
+            --border-color: #E0E0E0;
+            --footer-bg-color: rgba(0, 122, 255, 0.5);
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            direction: rtl;
+            text-align: right;
+            margin: 0;
+            background-image: var(--background-image);
+            background-size: cover;
+            background-position: center;
+            color: var(--text-color);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .container {
+            width: 100%;
+            max-width: 360px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: var(--container-bg-color);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .header img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-left: 20px;
+            animation: rotate 4s linear infinite;
+        }
+        @keyframes rotate {
+            0%, 50% {
+                transform: rotate(0deg);
+            }
+            75% {
+                transform: rotate(180deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        .header h1 {
+            margin: 0;
+            font-family: 'Amiri', serif;
+            font-size: 24px;
+            color: var(--primary-color);
+            cursor: pointer;
+            transition: transform 0.3s;
+            animation: slide 3s ease-in-out infinite;
+        }
+        @keyframes slide {
+            0%, 100% {
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(20px);
+            }
+        }
+        .profile-pic, .interactive-pic {
+            width: 100px;
+            height: 150px;
+            border-radius: 20px;
+            border: 3px solid var(--border-color);
+            margin: 0 auto 20px auto;
+            display: block;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            object-fit: cover;
+        }
+        .profile-pic:hover, .interactive-pic:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+        .profile-pic {
+            animation: float 2s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+        .contact-button {
+            background-color: var(--secondary-color);
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .contact-button:hover {
+            background-color: var(--secondary-color-hover);
+        }
+        p {
+            line-height: 1.6;
+        }
+        .interactive-section {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: var(--container-bg-color);
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        .features-section {
+            margin-top: 20px;
+        }
+        .feature {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .feature-icon {
+            font-size: 24px;
+            color: var(--primary-color);
+            margin-left: 10px;
+        }
+        .feature-text {
+            font-size: 16px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: var(--footer-bg-color);
+            color: #fff;
+            border-radius: 0 0 20px 20px;
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
+            backdrop-filter: blur(10px);
+            width: 100%;
+            max-width: 360px;
+        }
+        footer a {
+            color: #fff;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        .whatsapp-button {
+            background-color: #25D366;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 20px;
+            text-align: center;
+            text-decoration: none;
+        }
+        .whatsapp-button:hover {
+            background-color: #1ebc57;
+        }
+        .whatsapp-button .fab {
+            margin-left: 10px;
+        }
+        @media (min-width: 768px) {
+            .container {
+                width: 50%;
+                max-width: 800px;
+                margin: 50px auto;
+                padding: 40px;
+            }
+            .header {
+                justify-content: space-between;
+            }
+            .profile-pic, .interactive-pic {
+                width: 150px;
+                height: 200px;
+            }
+            .interactive-section {
+                padding: 40px;
+            }
+            footer {
+                width: 50%;
+                max-width: 800px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="LOGO.jpg" alt="شعار الموقع">
+            <h1 id="eng-hamdi">ENG HAMDI</h1>
+        </div>
+        <div class="profile-section">
+            <img src="HM.jpg" alt="صورة المهندس حمدي" class="profile-pic">
+            <p>
+                مرحبًا، أنا المهندس حمدي. مهندس متخصص في [مجال البرمجة]. لدي خبرة تزيد عن [4] سنوات في العمل على [مجالات البرمجة]. أنا شغوف بتطوير الحلول المبتكرة والمساهمة في تحقيق الأهداف الطموحة للمشاريع التي أعمل عليها.
+            </p>
+        </div>
+        <div class="interactive-section">
+            <img src="hamdi.jpg" alt="صورة تفاعلية 1" class="interactive-pic" onclick="playAudio('audio1')">
+            <img src="mohamed.jpg" alt="صورة تفاعلية 2" class="interactive-pic" onclick="playAudio('audio2')">
+            <img src="OIP.jpg" alt="صورة تفاعلية 3" class="interactive-pic" onclick="playAudio('audio3')">
+        </div>
+        <div class="features-section">
+            <div class="feature">
+                <i class="fas fa-code feature-icon"></i>
+                <div class="feature-text">خبرة واسعة في لغات البرمجة الحديثة</div>
+            </div>
+            <div class="feature">
+                <i class="fas fa-lightbulb feature-icon"></i>
+                <div class="feature-text">حلول إبداعية ومبتكرة للمشكلات التقنية</div>
+            </div>
+            <div class="feature">
+                <i class="fas fa-users feature-icon"></i>
+                <div class="feature-text">العمل الجماعي والتعاون الفعّال</div>
+            </div>
+            <div class="feature">
+                <i class="fas fa-laptop-code feature-icon"></i>
+                <div class="feature-text">تطوير تطبيقات ويب تفاعلية وعالية الأداء</div>
+            </div>
+        </div>
+        <<!DOCTYPE html>
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!DOCTYPE html>
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>روابط التواصل</title>
+        <!-- رابط الأيقونات من موقع fontawesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <style>
+            /* ستايل للأيقونات */
+            .social-icons {
+                list-style: none;
+                padding: 0;
+                text-align: center; /* لتوسيط الأيقونات */
+            }
+            .social-icons li {
+                display: inline-block;
+                margin-right: 10px;
+            }
+            /* دائرة عرضية للأيقونات */
+            .circle {
+                display: inline-block;
+                width: 50px;
+                height: 50px;
+                line-height: 50px;
+                border-radius: 50%;
+                background-color: #f0f0f0;
+                text-align: center;
+                margin: 10px;
+            }
+            .circle a {
+                color: #333;
+                text-decoration: none;
+            }
+        </style>
+        </head>
+        <body>
+         
